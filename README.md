@@ -1,2 +1,2 @@
 # humanitec-storage-account-base
-Humanitec Azure Storage Account Terraform module
+Terraform module used by Humanitec to provision an Azure Storage Account and Blob Container

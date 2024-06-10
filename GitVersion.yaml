@@ -1,0 +1,12 @@
+next-version: 1.0.0
+assembly-versioning-scheme: MajorMinorPatchTag
+mode: ContinuousDeployment
+branches:
+  main:
+    regex: ^main$
+    mode: ContinuousDelivery
+    tag: ""
+    source-branches: ["main"]
+ignore:
+  sha: []
+merge-message-formats: {}
