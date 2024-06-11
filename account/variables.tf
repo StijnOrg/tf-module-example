@@ -33,11 +33,6 @@ variable "location" {
   }
 }
 
-variable "resource_group_name" {
-  type        = string
-  description = "The name of the resource group where the Key Vault will be created in."
-}
-
 variable "account_kind" {
   type        = string
   default     = "StorageV2"
