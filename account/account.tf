@@ -37,7 +37,7 @@ resource "azurerm_storage_account_network_rules" "st_network_rules" {
   storage_account_id = azurerm_storage_account.main.id
   default_action     = length(var.private_endpoint_services) > 0 ? "Deny" : "Allow"
   bypass             = ["AzureServices"]
-  ip_rules           = module.globalvars.trusted_wan_ips
+  ip_rules           = module.humanitecvars.trusted_wan_ips
 }
 
 module "private_endpoint" {
