@@ -43,12 +43,12 @@ resource "azurerm_storage_account_network_rules" "st_network_rules" {
 module "private_endpoint" {
   for_each            = toset(var.private_endpoint_services)
   source              = "github.com/liantisit-iac-modules/azure-private-endpoint-base?ref=1.0.3"
-  resource_suffix     = var.resource_suffix
-  resource_name       = local.name
+  resource_suffix     = local.resource_suffix
+  resource_name       = azurerm_storage_account.main.name
   location            = var.location
   resource_group_name = var.resource_group_name
   resource_id         = azurerm_storage_account.main.id
   subresource_name    = each.value
   kind                = each.value != "file" ? "http" : "data"
-  tags                = var.tags
+  tags                = local.tags
 }
