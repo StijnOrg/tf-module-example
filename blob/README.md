@@ -39,6 +39,6 @@
 
 | Name | Description |
 |------|-------------|
-| <a name="output_account"></a> [account](#output\_account) | n/a |
-| <a name="output_container"></a> [container](#output\_container) | n/a |
+| <a name="output_account"></a> [account](#output\_account) | Name of the storage account. Required output by Humanitec Resource Type. |
+| <a name="output_container"></a> [container](#output\_container) | value of the container. Required output by Humanitec Resource Type. |
 <!-- END_TF_DOCS -->

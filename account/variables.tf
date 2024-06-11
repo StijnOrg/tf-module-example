@@ -160,11 +160,15 @@ variable "tags" {
 }
 
 locals {
+  workload_name = replace(trimprefix(var.res_id, "modules."), "/.external.*/", "")
+
   tags = merge(var.tags, {
     "source"          = "platform-humanitec"
     "creationdate"    = timestamp()
     "environmenttype" = var.env_type
     "environment"     = var.env_id
+    "solution"        = var.app_id
+    "workload"        = local.workload_name
   })
 
   resource_suffix = module.humanitecvars.humanitec_env_type_resource_suffix_mapping[var.env_type]

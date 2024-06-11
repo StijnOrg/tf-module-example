@@ -49,7 +49,7 @@
 | <a name="input_location"></a> [location](#input\_location) | The Azure location where the resource will be deployed. | `string` | `"Germany West Central"` | no |
 | <a name="input_private_endpoint_services"></a> [private\_endpoint\_services](#input\_private\_endpoint\_services) | List of services to connect to the private endpoint. Allowed services in array: blob, web, file. | `list(string)` | `[]` | no |
 | <a name="input_res_id"></a> [res\_id](#input\_res\_id) | Humanitec resource id. | `string` | n/a | yes |
-| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The name of the resource group where the Key Vault will be created in. | `string` | n/a | yes |
+| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The name of the resource group where the storage account will be created in. | `string` | n/a | yes |
 | <a name="input_sftp_enabled"></a> [sftp\_enabled](#input\_sftp\_enabled) | Enables SFTP endpoint.  By setting this to true, versioning and change\_feed will be disabled (Default = false). | `bool` | `false` | no |
 | <a name="input_shared_access_key_enabled"></a> [shared\_access\_key\_enabled](#input\_shared\_access\_key\_enabled) | Specifies whether the storage account permits requests to be authorized with the account access keys.  (Default = false). | `bool` | `false` | no |
 | <a name="input_storage_account_access_subnet_name"></a> [storage\_account\_access\_subnet\_name](#input\_storage\_account\_access\_subnet\_name) | List of strings specifying which subnet can access this storage account. | `list(string)` | `null` | no |
@@ -60,5 +60,5 @@
 
 | Name | Description |
 |------|-------------|
-| <a name="output_name"></a> [name](#output\_name) | Azure resource name of created storage account. |
+| <a name="output_name"></a> [name](#output\_name) | Azure resource name of created storage account. Required output by Humanitec Resource Type. |
 <!-- END_TF_DOCS -->
