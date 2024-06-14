@@ -176,5 +176,5 @@ locals {
   subscription_id = module.humanitecvars.subscription_ids[local.resource_suffix]
   tenant_id       = module.humanitecvars.tenant_id
 
-  name = "${module.humanitecvars.azure_resource_prefixes["storage_account"]}${random_string.storage_account_name_sufix.result}"
+  name = "${module.humanitecvars.azure_resource_prefixes["storage_account"]}${random_string.storage_account_name_sufix.result}${local.resource_suffix}"
 }
