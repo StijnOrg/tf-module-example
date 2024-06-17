@@ -162,6 +162,9 @@ variable "tags" {
 locals {
   workload_name = replace(trimprefix(var.res_id, "modules."), "/.external.*/", "")
 
+  # remove dashes from generated guid and take 16 characters
+  uuid = substr(replace(arm2tf_guid.deterministic_guid.result, "-", ""), 0, 15)
+
   tags = merge(var.tags, {
     "source"          = "platform-humanitec"
     "creationdate"    = timestamp()
@@ -176,5 +179,5 @@ locals {
   subscription_id = module.humanitecvars.subscription_ids[local.resource_suffix]
   tenant_id       = module.humanitecvars.tenant_id
 
-  name = "${module.humanitecvars.azure_resource_prefixes["storage_account"]}${random_string.storage_account_name_sufix.result}${local.resource_suffix}"
+  name = "${module.humanitecvars.azure_resource_prefixes["storage_account"]}${local.uuid}${local.resource_suffix}"
 }

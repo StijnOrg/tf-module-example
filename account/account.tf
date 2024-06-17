@@ -1,8 +1,10 @@
-resource "random_string" "storage_account_name_sufix" {
-  length  = 16
-  special = false
-  lower   = true
-  upper   = false
+resource "arm2tf_guid" "deterministic_guid" {
+  input = [
+    var.location,
+    var.resource_group_name,
+    var.app_id,
+    var.env_id
+  ]
 }
 
 resource "azurerm_storage_account" "main" {
