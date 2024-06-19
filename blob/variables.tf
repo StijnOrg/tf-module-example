@@ -24,7 +24,7 @@ variable "env_type" {
 }
 
 locals {
-  resource_suffix                  = module.humanitecvars.humanitec_env_type_resource_suffix_mapping[var.env_type]
+  resource_suffix = module.humanitecvars.humanitec_env_type_resource_suffix_mapping[var.env_type]
 
   subscription_id = module.humanitecvars.subscription_ids[local.resource_suffix]
   tenant_id       = module.humanitecvars.tenant_id

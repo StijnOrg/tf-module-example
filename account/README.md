@@ -4,30 +4,30 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5 |
+| <a name="requirement_arm2tf"></a> [arm2tf](#requirement\_arm2tf) | 0.2.3 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
+| <a name="provider_arm2tf"></a> [arm2tf](#provider\_arm2tf) | 0.2.3 |
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 3 |
-| <a name="provider_random"></a> [random](#provider\_random) | n/a |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_humanitecvars"></a> [humanitecvars](#module\_humanitecvars) | github.com/liantisit-iac-modules/humanitecvars | v1 |
-| <a name="module_naming"></a> [naming](#module\_naming) | Azure/naming/azurerm | ~> 0.4 |
 | <a name="module_private_endpoint"></a> [private\_endpoint](#module\_private\_endpoint) | github.com/liantisit-iac-modules/azure-private-endpoint-base | 1.0.3 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
+| [arm2tf_guid.deterministic_guid](https://registry.terraform.io/providers/cloud-maker-ai/arm2tf/0.2.3/docs/resources/guid) | resource |
 | [azurerm_storage_account.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account) | resource |
 | [azurerm_storage_account_network_rules.st_network_rules](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account_network_rules) | resource |
-| [random_string.storage_account_name_sufix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ## Inputs
 

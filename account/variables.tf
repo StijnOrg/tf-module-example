@@ -166,12 +166,9 @@ locals {
   uuid = substr(replace(arm2tf_guid.deterministic_guid.result, "-", ""), 0, 15)
 
   tags = merge(var.tags, {
-    "source"          = "platform-humanitec"
-    "creationdate"    = timestamp()
-    "environmenttype" = var.env_type
-    "environment"     = var.env_id
-    "solution"        = var.app_id
-    "workload"        = local.workload_name
+    "source"            = "platform-humanitec"
+    "creationTimestamp" = timestamp()
+    "environmentType"   = var.env_type
   })
 
   resource_suffix = module.humanitecvars.humanitec_env_type_resource_suffix_mapping[var.env_type]
